@@ -55,7 +55,7 @@ class UserControllers {
         name = ?,  
         email = ?, 
         password = ?,
-        updated_at = DATETIME('now') 
+        updated_at = DATETIME("now", "localtime") 
         WHERE id = ?`, [user.name, user.email, user.password, user.id]
     );
     return response.status(201).json({ message: "Updated" })
